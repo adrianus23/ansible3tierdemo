@@ -1,0 +1,17 @@
+- hosts: app_servers
+  gather_facts: false
+  become: yes
+  roles:
+   - app-teardown-tier
+
+- hosts: database_servers
+  gather_facts: false
+  become: yes
+  roles:
+   - db-teardown-tier
+
+- hosts: load_balancers
+  gather_facts: false
+  become: yes
+  roles:
+   - loadbalancing-teardown-tier

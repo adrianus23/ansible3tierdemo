@@ -1,0 +1,9 @@
+- name: Remove Tomcat package(s)
+  package:
+    name: "{{ tomcat_packages }}"
+    state: absent
+
+- name: Remove java
+  package:
+    name: "java"
+    state: absent
