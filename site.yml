@@ -39,4 +39,23 @@
         msg: "{{ item }}"
       with_inventory_hostnames:
        - all   
+       
+       
+- hosts: apps
+  gather_facts: false
+  become: yes
+  roles:
+   - app-tier
+
+- hosts: appdbs
+  gather_facts: false
+  become: yes
+  roles:
+   - db-tier
+
+- hosts: frontends
+  gather_facts: false
+  become: yes
+  roles:
+   - loadbalancing-tier
     
