@@ -1,5 +1,6 @@
+---
 
-- task
+- task:
     - name: Fetch Instance Info
       os_server_info:
         cloud: openstack
